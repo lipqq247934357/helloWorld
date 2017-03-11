@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery实现页面内锚点平滑跳转-柯乐义</title><base target="_blank" />
+<style type="text/css">
+#hovertree {
+height: 800px;
+background: red;
+text-align:center;color:white;
+}
+
+#keleyi {
+height: 800px;
+background: green;text-align:center;color:white;
+}
+
+#myslider {
+height: 800px;
+background: black;text-align:center;color:white;
+}
+
+#zonemenu {
+height: 800px;
+background: yellow;text-align:center;
+}
+
+.keleyilink{position:fixed;}
+.keleyilink a {text-decoration:none;}
+</style>
+<script type="text/javascript" src="../../../resource/js/sea-debug.js"></script>
+</head>
+<body>
+<div class="keleyilink">
+<a href="javascript:scroll('hovertree');" target="_self">HoverTree</a>
+<a href="javascript:scroll('keleyi');" target="_self">柯乐义</a>
+<a href="javascript:scroll('myslider');" target="_self">myslider</a>
+<a href="javascript:scroll('zonemenu');" target="_self">ZoneMenu</a>
+</div>
+<div id="hovertree">hovertree
+<br /><br /><br /><a href="http://keleyi.com/a/bjae/jrdfulnx.htm">原文</a> <a href="http://keleyi.com">柯乐义</a> <a href="http://hovertree.com">HoverTree</a> <a href="http://keleyi.com/keleyi/phtml/">特效库</a>
+</div>
+<div id="keleyi">keleyi</div>
+<div id="myslider">myslider</div>
+<div id="zonemenu">zonemenu</div>
+<script type="text/javascript">
+seajs.config({
+	base:"../../../resource/js",
+	alias:{
+		"jquery":"jquery-1.8.2.min.js",
+		"anchorSmoothRoll":"lib/anchorSmoothRoll.js"
+	}
+});
+seajs.use(['anchorSmoothRoll'],function(anchorSmoothRoll){
+	$("#hovertree","#keleyi","#myslider","#zonemenu").click(function(){ $(this).HoverTreeScroll(1000);});
+});
+</script>
+</body>
+</html>
