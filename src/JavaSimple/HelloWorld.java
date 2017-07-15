@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -624,7 +625,7 @@ public class HelloWorld {
 
     @Test
     public void parseTest() {
-        long l = 20170301130000000L;
+        long l = 20170413140000000L;
         parse(l);
     }
 
@@ -708,10 +709,112 @@ public class HelloWorld {
     @Test
     public void testDark() {
 
-        DateUtil.getDateForLong(String.valueOf(20170224110915608L), DateUtil.L_FMT, DateUtil.DATE_FMT);
+//        System.out.println(act_17_7_2Award(new BigDecimal("1600000")));
+//        Calendar c  = Calendar.getInstance();
+//        c.add(Calendar.DAY_OF_MONTH, 5);
+//        System.out.println(c.get(Calendar.DAY_OF_MONTH));
+//        System.out.println(Math.random());
+//        Map<String, long[]> map = new LinkedHashMap<String, long[]>();
+//        map.put("w1", new long[] { 20170701000000000L, 20170709235959000L });
+//        map.put("w2", new long[] { 20170710000000000L, 20170716235959000L });
+//        map.put("w3", new long[] { 20170717000000000L, 20170723235959000L });
+//        map.put("w4", new long[] { 20170724000000000L, 20170731235959000L });
+//            for (int i = 1; i <= 4; i++) {
+//                long [] l = map.get("w" + i);
+//                parse(l[0]);
+//                parse(l[1]);
+//            }
+            
+//        System.out.println(new BigDecimal("11111").divide(new BigDecimal("2000"), 2, BigDecimal.ROUND_DOWN).toString());
+
+//        for(int i = 0;i<10000;i++){
+//            String str = Math.random() * 510000+"";
+//            System.out.println(str +"  " +act_17_7_2HD(new BigDecimal(str))[1]);
+//        }
+
+        /*long yes = DateUtil.getDateAfterPeriod(20170702000000000L, -1);
+        long tenDayAgo = DateUtil.getDateAfterPeriod(20170702000000000L, -10);
+        System.out.println((tenDayAgo + 235959000)+" "+(yes + 235959000));*/
+        
+//        for(int i = 10;i<10000;i++){
+//            double d = Math.random()*1000000000;
+//            float f = (float)d;
+//            System.out.println(f+"    "+formatMoney(new BigDecimal(f)));
+//        }
+        
+//        Date sdate = DateUtil.getDateByLong(20140707000000000l);
+//        Date edate = new Date();
+//        System.out.println(edate.getTime() - sdate.getTime());
+        
+//        long l = DateUtil.getDif(DateUtil.getSystemTimeForLong(), 20140707000000000l);
+//        long year = l / 365;
+//        long day = l % 365;
+//        System.out.println( year + "年" + day + "日");
+        
+//        System.out.println(format(new BigDecimal("120090992"),"<em>人</em>"));
+        
+        int length = "201801".length();
+        System.out.println("201801".substring(length-2,length));
         
     }
     
+    public String format(BigDecimal amount, String unit) {
+        return formatMoney(amount) + unit;
+    }
+
+    public String formatMoney(BigDecimal amount) {
+
+        BigDecimal yw = new BigDecimal("10000");
+        BigDecimal yy = yw.multiply(yw);
+        if (amount.compareTo(yy) == 1) {
+            BigDecimal[] awardAmount4Separator = amount.divideAndRemainder(yy);
+            BigDecimal times = awardAmount4Separator[0];//整数位
+            BigDecimal award = awardAmount4Separator[1];//余数
+            return times + "<em>亿</em>" + (award.compareTo(BigDecimal.ZERO) == 1 ? formatMoney(award) : "");
+        } else if (amount.compareTo(yw) == 1) {
+            BigDecimal[] awardAmount4Separator = amount.divideAndRemainder(yw);
+            BigDecimal times = awardAmount4Separator[0];//整数位
+            BigDecimal award = awardAmount4Separator[1];//余数
+            return times + "<em>万</em>" + (award.compareTo(BigDecimal.ZERO) == 1 ? formatMoney(award) : "");
+        } else {
+            return amount + "";
+        }
+    }
     
+    public String[] act_17_7_2HD(BigDecimal amount) {
+        String[][] quanInfos1 = { { "0", "2", "2", "1000" }, { "1", "4", "2", "2000" },
+                                 { "2", "6", "2", "3000" } };
+        String[][] quanInfos2 = { { "3", "10", "2", "5000" }, { "4", "16", "2", "8000" },
+                                 { "5", "20", "2", "10000" } };
+
+        String[][] quanInfos3 = { { "6", "40", "2", "20000" }, { "7", "60", "2", "30000" } };
+
+        String[][] quanInfos4 = { { "8", "110", "2", "50000", "50000", "100000" },
+                                 { "9", "240", "2", "100000", "100000", "200000" },
+                                 { "10", "480", "2", "200000", "200000", "500000" } };
+
+        if (amount.compareTo(new BigDecimal("5000")) == -1) {
+            return getQuanRandomEqProbaility(quanInfos1);
+        } else if (amount.compareTo(new BigDecimal("20000")) == -1) {
+            return getQuanRandomEqProbaility(quanInfos2);
+        } else if (amount.compareTo(new BigDecimal("5000")) == -1) {
+            return getQuanRandomEqProbaility(quanInfos3);
+        } else {
+            String[] quanInfo = quanInfos4[2];
+            for (int i = 0; i < 3; i++) {
+                BigDecimal minAmt = new BigDecimal(quanInfos4[i][4]);
+                BigDecimal maxAmt = new BigDecimal(quanInfos4[i][5]);
+                if (amount.compareTo(minAmt) >= 0 && amount.compareTo(maxAmt) == -1) {
+                    return quanInfos4[i];
+                }
+            }
+            return quanInfo;
+        }
+    }
+    public String[] getQuanRandomEqProbaility(String[][] quanInfo) {
+        int length = quanInfo.length;
+        int randomNum = (int) Math.floor(Math.random() * length);
+        return quanInfo[randomNum];
+    }
     
 }
