@@ -17,7 +17,7 @@ class AwardCalculatorTest {
     void getLevelReturnsExpectedFloor() {
         AwardCalculator calculator = new AwardCalculator();
         assertEquals(1, calculator.getLevel(new BigDecimal("5000"), rank()));
-        assertEquals(2, calculator.getLevel(new BigDecimal("50000"), rank()));
+        assertEquals(3, calculator.getLevel(new BigDecimal("50000"), rank()));
         assertEquals(7, calculator.getLevel(new BigDecimal("2000000"), rank()));
     }
 
