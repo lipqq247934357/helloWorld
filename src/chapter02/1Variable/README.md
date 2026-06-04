@@ -53,4 +53,10 @@
 
 ## 变量类型提升
 
-    1
+    1.boolean类型不支持类型转换；这个和js完全不一样；
+    2.运算规则：
+        1.自动类型提升
+            byte,short --> int --> long --> float --> double
+            byte和short做运算之后结果至少是int类型；
+        2.强制类型转换
+            
