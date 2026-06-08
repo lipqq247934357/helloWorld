@@ -6,14 +6,13 @@ import java.io.InputStreamReader;
 public class GitPushUtil {
 
     private static final String DESKTOP_PATH = "/Users/lipeng/Desktop";
-    public static final String gitRepoName = "myProject/reactLearn";
 
-    public static String getRepoPath() {
+    public static String getRepoPath(String gitRepoName) {
         return DESKTOP_PATH + "/" + gitRepoName;
     }
 
-    public static void push() throws Exception {
-        String repoPath = getRepoPath();
+    public static void push(String gitRepoName) throws Exception {
+        String repoPath = getRepoPath(gitRepoName);
 
         System.out.println("cd " + repoPath);
         System.out.println("git push");
