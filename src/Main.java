@@ -2,7 +2,7 @@ import utils.GitPushUtil;
 
 public class Main {
 
-    public static String RepoName = "myProject/helloWorld";
+    public static String RepoName = "myProject/style-demo";
 
     public static void main(String[] args) {
         // 推送 helloWorld 项目`

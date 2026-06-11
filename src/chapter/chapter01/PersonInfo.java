@@ -1,3 +1,5 @@
+package chapter.chapter01;
+
 public class PersonInfo {
     
     private String name;

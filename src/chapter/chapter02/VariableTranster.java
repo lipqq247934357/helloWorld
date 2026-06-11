@@ -1,3 +1,5 @@
+package chapter.chapter02;
+
 /**
  * 
  * 基本数据类型之间的转换

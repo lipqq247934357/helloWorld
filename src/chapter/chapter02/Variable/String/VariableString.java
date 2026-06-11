@@ -1,3 +1,5 @@
+package chapter.chapter02.Variable.String;
+
 /**
  * 
  * 基本数据类型与String类型之间的转换

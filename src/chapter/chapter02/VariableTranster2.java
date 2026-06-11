@@ -1,3 +1,5 @@
+package chapter.chapter02;
+
 /**
  * 强制类型转换
  * 
