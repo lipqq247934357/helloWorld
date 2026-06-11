@@ -1,12 +1,24 @@
 import utils.GitPushUtil;
+import chapter.chapter01.helloWorld;
 
 public class Main {
 
-    public static String RepoName = "myProject/style-demo";
+    public static String RepoName = "myProject/helloWorld";
+    public static String actionType = "pushGit";
 
     public static void main(String[] args) {
-        // 推送 helloWorld 项目`
-        push(Main.RepoName);
+
+        switch (actionType) {
+            case "helloWorld":
+                // 调用 helloWorld 类中的 sayHello 方法
+                helloWorld.sayHello(args);
+                break;
+            default:
+                // 推送 helloWorld 项目`
+                push(Main.RepoName);
+                break;
+        }
+
     }
 
     public static void push(String gitRepoName) {
