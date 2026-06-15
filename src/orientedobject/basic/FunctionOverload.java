@@ -1,6 +1,6 @@
 package orientedobject.basic;
 
-public class ClassTest {
+public class FunctionOverload {
     public static void main(String[] args) {
         Phone phone = new Phone();
         phone.brand = "华为";
