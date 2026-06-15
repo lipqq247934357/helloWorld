@@ -9,6 +9,7 @@ public class classTest {
         phone.call();
         phone.sendMessage();
         System.out.println(phone.brand + " " + phone.price + " " + phone.color);
+        phone.show();
     }
 }
 
@@ -25,5 +26,9 @@ class Phone {
     public void sendMessage() {
         System.out.println("发短信");
 
+    }
+
+    public void show() {
+        System.out.println("品牌：" + brand + "，价格：" + price + "，颜色：" + color);
     }
 }
