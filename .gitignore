@@ -25,3 +25,4 @@ bin/
 ### Mac OS ###
 .DS_Store
 .specstory
+.qoder/rules/code-auto-collection.md
