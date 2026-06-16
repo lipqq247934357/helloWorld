@@ -9,7 +9,11 @@ public class FunctionOverload {
         phone.call();
         phone.sendMessage();
         System.out.println(phone.brand + " " + phone.price + " " + phone.color);
+        System.out.println("================================");
         phone.show();
+        phone.show("华为", 1999, "黑色");
+        phone.show("华为");
+        phone.show("华为", "小米", "oppo", "vivo", "魅族", "锤子", "一加");
     }
 }
 
@@ -31,4 +35,25 @@ class Phone {
     public void show() {
         System.out.println("品牌：" + brand + "，价格：" + price + "，颜色：" + color);
     }
+
+    public void show(String brand, int price, String color) {
+        System.out.println("品牌：" + brand + "，价格：" + price + "，颜色：" + color);
+    }
+
+    public void show(String brand) {
+        System.out.println("品牌：" + brand);
+    }
+
+    public void show(String... brands) {
+        StringBuilder str = new StringBuilder();
+        for (String brand : brands) {
+            str.append(brand).append(" ");
+        }
+        System.out.println("品牌：" + str);
+    }
+
+    // String... brands 等价于 String[] brands;所以不能同时存在；
+    // public void show(String[] brands) {
+    //     System.out.println("价格：" + price);
+    // }
 }
