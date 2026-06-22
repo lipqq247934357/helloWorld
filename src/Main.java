@@ -11,7 +11,7 @@ public class Main {
         switch (actionType) {
             case "helloWorld":
                 // 调用 helloWorld 类中的 sayHello 方法
-                helloWorld.sayHello(args);
+                helloWorld.sayHello();
                 break;
             default:
                 // 推送 helloWorld 项目`
