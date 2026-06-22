@@ -29,7 +29,7 @@
 
     }
 
-    权限修饰符： public 缺省的 protected public
+    权限修饰符： private 缺省的 protected public
 
     返回值： 没有返回值是 void 否则指明返回的数据的类型
 
