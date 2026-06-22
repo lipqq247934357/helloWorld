@@ -10,11 +10,11 @@ import java.util.Comparator;
  */
 public class ArrayTest3 {
     public static void main(String[] args) {
-        printDemo();
-        sortDemo();
-        searchDemo();
-        fillAndCopyDemo();
-        equalsDemo();
+        printDemo(); // 打印数组
+        sortDemo(); // 排序
+        searchDemo(); // 查找
+        fillAndCopyDemo(); // 填充与复制
+        equalsDemo(); // 比较数组是否相等
     }
 
     /** 打印数组 */

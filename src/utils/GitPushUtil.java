@@ -32,4 +32,12 @@ public class GitPushUtil {
             throw new RuntimeException("git push 失败");
         }
     }
+
+    public static void main(String[] args) throws Exception {
+
+        String RepoName = "myProject/helloWorld";
+        // 推送 helloWorld 项目`
+        GitPushUtil.push(RepoName);
+    }
+
 }

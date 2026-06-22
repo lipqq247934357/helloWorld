@@ -7,11 +7,11 @@ package chapter.chapter04;
  */
 public class ArrayTest1 {
     public static void main(String[] args) {
-        declareAndInitDemo();
-        accessAndModifyDemo();
-        traverseDemo();
-        statsDemo();
-        twoDimensionalDemo();
+        declareAndInitDemo(); // 数组的声明与初始化
+        accessAndModifyDemo(); // 访问与修改元素
+        traverseDemo(); // 数组遍历
+        statsDemo(); // 常用统计
+        twoDimensionalDemo(); // 二维数组
     }
 
     /** 数组的声明与初始化 */
