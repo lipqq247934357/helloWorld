@@ -42,6 +42,13 @@
         每个对象各自拥有一份；
         有默认初值：整型为 0，浮点型为 0.0，char 为 '\u0000'，boolean 为 false，引用类型为 null；
         示例：Phone 类中的 brand、price、color；
+        具体根据是否使用static关键字可以分的更细：
+            1.静态成员变量（也叫类变量）
+                定义在类中、方法外面，使用static关键字修饰；
+                示例：Phone 类中的 static int count;
+            2.非静态成员变量（也叫实例变量）
+                不使用static关键字修饰；
+                示例：Phone 类中的 brand、price、color；
 
     局部变量
         定义在方法内部、构造器内部或代码块内部，方法的形参也属于局部变量；
