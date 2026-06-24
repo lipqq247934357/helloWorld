@@ -7,12 +7,16 @@ public class ExtendsTest3 {
         Student student = new Student();
         student.setName("张三");
         student.setAge(18);
+        student.setAge(28);
         System.out.println(student.name + " " + student.age);
     }
 
 }
 
 class People {
+    public People() {
+        System.out.println("People");
+    }
 
     public String name;
     private int age;
@@ -29,6 +33,10 @@ class People {
 }
 
 class Student extends People {
+    public Student() {
+        super();
+        System.out.println("Student");
+    }
     public int age;
     public void setName (String name) {
         this.name = name + "(学生)";

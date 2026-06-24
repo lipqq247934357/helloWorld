@@ -2,6 +2,7 @@ package utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 
 public class GitPushUtil {
 
@@ -35,9 +36,10 @@ public class GitPushUtil {
 
     public static void main(String[] args) throws Exception {
 
-        String RepoName = "myProject/helloWorld";
+        String repoPath = "myProject";
+        String RepoName = "godotGame2";
         // 推送 helloWorld 项目`
-        GitPushUtil.push(RepoName);
+        GitPushUtil.push(repoPath + "/" + RepoName);
     }
 
 }
