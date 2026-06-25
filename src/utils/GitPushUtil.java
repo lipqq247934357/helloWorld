@@ -37,7 +37,7 @@ public class GitPushUtil {
     public static void main(String[] args) throws Exception {
 
         String repoPath = "myProject";
-        String RepoName = "godotGame2";
+        String RepoName = "helloWorld";
         // 推送 helloWorld 项目`
         GitPushUtil.push(repoPath + "/" + RepoName);
     }

@@ -8,7 +8,7 @@
 
     继承就是类之间可以通过extends关键字产生关联关系，继承的类可以使用被继承类的一些属性和方法；
     并且他们之间产生了is-XXX的关系，这样为多态提供了实现基础；
-    子类 继承 父类所有成员；直接访问 受 private / 包访问限制。
+    子类 继承 父类所有非private成员；直接访问 受 private / 包访问限制。
     java支持多层的继承；但不支持一个类多个父类；
 
 ### 方法重写
@@ -47,8 +47,23 @@
     用同一个父类型来接收和操作不同的子类型对象，但每个对象仍按自己的方式运行。
     编译时，认为是左边的类型，实际执行时执行的是右边的子类的方法；
     编译看左边，运行看右边；
-    多态适用于方法，不适用于属性；
+    多态只适用于方法，不适用于属性；
     多态是接口和抽象类的基础；
+    
+    示例：
+        class Person {
+            int age = 10;
+            void show() { System.out.println("Person"); }
+        }
+        class Son extends Person {
+            int age = 20;
+            @Override
+            void show() { System.out.println("Son"); }
+        }
+        Person p = new Son();
+        System.out.println(p.age);  // 10，属性看左边声明类型 Person
+        p.show();                    // Son，方法看右边实际对象 Son
+    
 
 ### 向下转型
 
