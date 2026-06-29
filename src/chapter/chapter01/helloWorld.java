@@ -1,5 +1,7 @@
 package chapter.chapter01;
 
+import java.util.Date;
+
 public class helloWorld {
 
     public static void main(String[] args) {
@@ -8,18 +10,29 @@ public class helloWorld {
 
     public static void sayHello() {
         Person p = new Son();
-        System.out.println(p.age);  // 10，属性看左边声明类型 Person
-        p.show();                    // Son，方法看右边实际对象 Son
-
+        p.getUseTime();
     }
 }
 
-class Person {
-    int age = 10;
-    void show() { System.out.println("Person"); }
+abstract class Person {
+    abstract void show();
+    public void getUseTime() {
+
+        Date before = new Date();
+        System.out.println(before.getTime());
+        show();
+        Date after = new Date();
+        System.out.println(after.getTime());
+        System.out.println("use time: " + (after.getTime() - before.getTime()));
+    }
 }
 class Son extends Person {
-    int age = 20;
     @Override
-    void show() { System.out.println("Son"); }
+    void show() {
+        System.out.println("Son");
+        System.out.println("Son");
+        System.out.println("Son");
+        System.out.println("Son");
+        System.out.println("Son");
+    }
 }

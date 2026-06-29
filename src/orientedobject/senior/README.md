@@ -78,3 +78,65 @@
     static final 静态常量；
 
 ## abstract
+
+    abstract可以用来修饰类和方法
+
+    抽象类
+        不能实例化，但是有默认的构造器，因为子类对象实例化的时候需要直接或者间接调用父类的构造器；
+    抽象方法
+        此方法即为抽象方法
+        此方法只有方法声明，没有方法体
+        子类必须重写所有的抽象方法，否则子类也是抽象类；
+
+## 接口(interface)
+
+
+    接口中的属性默认是 public static final（常量）；可以省略；
+    接口中的方法在 JDK 8 之前默认是 public abstract；
+    一个类可以实现多个接口，弥补 Java 单继承的不足；
+    接口也可以多继承接口；
+    接口不能实例化，也不能声明构造方法、代码块。
+    接口也有多态性：
+        Flyable f = new Duck();
+
+## 内部类
+
+    在类的内部声明的一个类就是内部类；这个内部类只在外部类的内部使用；
+    1. 静态内部类
+        静态内部类是用 static 修饰的内部类，静态内部类只能访问外部类的静态成员；
+    2. 成员内部类
+        成员内部类是外部类的成员，可以访问外部类的所有成员；
+    3. 局部内部类
+        局部内部类是定义在方法中的内部类，只能访问方法的参数和方法的局部变量；
+    4. 匿名内部类
+        匿名内部类是没有名字的内部类，通常用于实现接口或者继承类；
+
+## 枚举类
+
+## Annotation
+
+    jdk5.0引入的；
+    元注解：
+        @Target
+            表示注解可以应用的目标位置
+            可选值：
+                ElementType.TYPE: 类、接口、枚举
+                ElementType.FIELD: 字段、属性
+                ElementType.METHOD: 方法
+                ElementType.PARAMETER: 参数
+                ElementType.CONSTRUCTOR: 构造器
+                ElementType.LOCAL_VARIABLE: 局部变量
+                ElementType.ANNOTATION_TYPE: 注解类型
+                ElementType.PACKAGE: 包
+        @Retention
+            表示注解的保留策略
+            可选值：
+                RetentionPolicy.SOURCE: 源码级别，编译时丢弃
+                RetentionPolicy.CLASS: 默认值，编译时保留，运行时丢弃
+                RetentionPolicy.RUNTIME: 运行时保留，可以通过反射获取
+        @Documented
+        @Inherited
+
+## 基本类型和包装类的转换
+
+    
