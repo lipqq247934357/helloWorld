@@ -36,6 +36,12 @@ public class GitPushUtil {
 
     public static void main(String[] args) throws Exception {
 
+        boolean isDoc = true;
+        if (isDoc) {
+            GitPushUtil.push("文档/document");
+            return;
+        }
+
         String repoPath = "myProject";
         String RepoName = "helloWorld";
         // 推送 helloWorld 项目`
