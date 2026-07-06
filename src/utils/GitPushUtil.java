@@ -36,7 +36,7 @@ public class GitPushUtil {
 
     public static void main(String[] args) throws Exception {
 
-        boolean isDoc = true;
+        boolean isDoc = false;
         if (isDoc) {
             GitPushUtil.push("文档/document");
             return;
