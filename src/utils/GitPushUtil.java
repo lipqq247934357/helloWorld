@@ -43,7 +43,7 @@ public class GitPushUtil {
         }
 
         String repoPath = "myProject";
-        String RepoName = "helloWorld";
+        String RepoName = "reactLearn";
         // 推送 helloWorld 项目`
         GitPushUtil.push(repoPath + "/" + RepoName);
     }
